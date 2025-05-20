@@ -25,12 +25,12 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/rest-api:latest .
+          docker build -t mpunith/rest-api:latest .
 
       # Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/rest-api:latest
+          docker push mpunith/rest-api:latest
 
       # Set up Azure credentials
       - name: Set up Azure credentials
@@ -51,6 +51,6 @@ jobs:
       - name: Deploy to AKS
         run: |
           kubectl apply -f deployment.yml  # Apply your deployment and service YAML files
-          kubectl set image deployment/flash-book-api-deployment flash-book-api=${{ secrets.DOCKER_USERNAME }}/flash-book-api:latest
+          kubectl set image deployment/flash-book-api-deployment flash-book-api=mpunith/flash-book-api:latest
           
 

@@ -25,12 +25,12 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/flash-book-api:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/rest-api:latest .
 
       # Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/flash-book-api:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/rest-api:latest
 
       # Set up Azure credentials
       - name: Set up Azure credentials

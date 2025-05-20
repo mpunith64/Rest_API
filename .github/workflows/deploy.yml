@@ -55,7 +55,7 @@ jobs:
 
       # Terraform Apply
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform destroy -auto-approve
         working-directory: ./IAC
 
         # Get AKS credentials
